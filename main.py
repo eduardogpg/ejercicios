@@ -163,6 +163,29 @@ def splits(sentence):
     words.append(word)
     return [words, separators]
 
+    """
+        def separacion(lista):
+
+            separadores = []
+            palabras = []
+            
+            texto = lista
+
+            texto = texto.split()
+            for palabra in texto:
+                if palabra[-1] != "," and palabra[-1] != ".":
+                    separadores.append(" ")
+                    palabras.append(palabra)
+                elif palabra[-1] == ",":
+                    separadores.append(", ")
+                    palabra = palabra[0:-1]
+                    palabras.append(palabra)
+                elif palabra[-1] == ".":
+                    palabras.append(palabra)
+
+            return [palabras, separadores]
+    """
+
 
 def containing(numbers):
     """Write a Python program to find list integers containing exactly four distinct values,
