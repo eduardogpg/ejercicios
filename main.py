@@ -125,3 +125,73 @@ def ten(numbers):
             return False
     
     return True
+
+
+def one(numbers):
+    """Write a Python program to check a given list of integers where the sum of the first i integers is i}
+    
+    >>> one([0, 1, 2, 3, 4, 5])
+    False
+    
+    >>> one([1, 1, 1, 1, 1, 1])
+    True
+    
+    >>> one([2, 2, 2, 2, 2])
+    False
+    """
+    return numbers[0] == 1
+
+
+def splits(sentence):
+    """Write a Python program to split a string of words separated by commas and spaces into two lists, 
+    words and separators. 
+
+    """
+    word = ''
+    words = list()
+    separators = list()
+    
+    for c in sentence:
+        if c  in (' ', ','):
+            words.append(word)
+            word = ''
+
+            separators.append(c)
+        else:
+            word = word + c
+    
+    words.append(word)
+    return [words, separators]
+
+
+def containing(numbers):
+    """Write a Python program to find list integers containing exactly four distinct values,
+    such that no integer repeats twice consecutively among the first twenty entries.
+    
+    >>> containing([1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4])
+    True
+    
+    >>> containing([1, 1, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4])
+    False
+    
+    >>> containing([1, 2, 3, 3, 1, 2, 3, 3, 1, 2, 3, 3, 1, 2, 3, 3])
+    False
+    
+    >>> containing([1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3])
+    False
+    """
+    
+    if len(set(numbers)) != 4:
+        return False
+    
+    last_element = numbers[0]
+    
+    for pos in range(1, len(numbers)):
+        if last_element == numbers[pos]:
+            return False
+        else:
+            last_element = numbers[pos]
+            
+    return True
+    
+    
